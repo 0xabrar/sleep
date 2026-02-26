@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <audio id="audio" src="/audio/sleep-loop.opus" loop preload="auto"></audio>
-    <button id="play-btn" aria-label="Play or pause audio">Play</button>
-    <input id="volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume" />
+    <div class="container">
+      <audio id="audio" src="/audio/sleep-loop.opus" loop preload="auto"></audio>
+      <button id="play-btn" aria-label="Play or pause audio">&#x25B6;</button>
+      <input id="volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume" />
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
