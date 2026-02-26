@@ -3,9 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="theme-color" content="#000000" />
     <title>Sleep</title>
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
+    <audio id="audio" src="/audio/sleep-loop.opus" loop preload="auto"></audio>
+    <button id="play-btn" aria-label="Play or pause audio">Play</button>
+    <input id="volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume" />
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
