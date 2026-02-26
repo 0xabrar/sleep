@@ -16,12 +16,3 @@ bun run build
 ```
 
 Produces a `dist/` directory. Deploy to Cloudflare Pages with build command `bun run build` and output directory `dist`.
-
-## Replacing the audio
-
-To swap in a different audio source:
-
-```bash
-yt-dlp -x --audio-format opus <url> -o raw-audio.opus
-ffmpeg -i raw-audio.opus -t 1200 -b:a 32k -vn public/audio/sleep-loop.opus
-```
