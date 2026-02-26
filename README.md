@@ -5,8 +5,8 @@ A minimal PWA that plays a sleep sound on loop. Dark OLED-friendly UI, offline s
 ## Setup
 
 ```bash
-npm install
-npm run dev
+bun install
+bun run dev
 ```
 
 ## Replacing the audio
@@ -21,7 +21,7 @@ ffmpeg -i raw-audio.opus -t 1200 -b:a 32k -vn public/audio/sleep-loop.opus
 ## Build
 
 ```bash
-npm run build
+bun run build
 ```
 
 Produces a `dist/` directory ready for deployment (e.g. Cloudflare Pages).
