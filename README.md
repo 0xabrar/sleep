@@ -9,9 +9,11 @@ bun install
 bun run dev
 ```
 
-## Replacing the audio
+## Audio
 
-The included audio file is a silent placeholder. Replace it with your own:
+The included audio is a 20-minute Opus loop extracted from [this YouTube video](https://www.youtube.com/watch?v=rCSCPujLs14) at 32kbps (~5MB).
+
+To replace it:
 
 ```bash
 yt-dlp -x --audio-format opus <url> -o raw-audio.opus
