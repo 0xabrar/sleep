@@ -1,6 +1,6 @@
 # Sleep
 
-A minimal PWA that plays a sleep sound on loop. Dark OLED-friendly UI, offline support, lock screen controls.
+A minimal PWA that plays a [sleep sound](https://www.youtube.com/watch?v=rCSCPujLs14) on loop. Dark OLED-friendly UI, offline support, lock screen controls.
 
 ## Setup
 
@@ -9,28 +9,19 @@ bun install
 bun run dev
 ```
 
-## Audio
-
-The included audio is a 20-minute Opus loop extracted from [this YouTube video](https://www.youtube.com/watch?v=rCSCPujLs14) at 32kbps (~5MB).
-
-To replace it:
-
-```bash
-yt-dlp -x --audio-format opus <url> -o raw-audio.opus
-ffmpeg -i raw-audio.opus -t 1200 -b:a 32k -vn public/audio/sleep-loop.opus
-```
-
-## Build
+## Build & Deploy
 
 ```bash
 bun run build
 ```
 
-Produces a `dist/` directory ready for deployment (e.g. Cloudflare Pages).
+Produces a `dist/` directory. Deploy to Cloudflare Pages with build command `bun run build` and output directory `dist`.
 
-## Stack
+## Replacing the audio
 
-- Vite + VitePWA
-- Vanilla HTML/CSS/JS
-- Opus audio with `<audio loop>`
-- Media Session API for lock screen controls
+To swap in a different audio source:
+
+```bash
+yt-dlp -x --audio-format opus <url> -o raw-audio.opus
+ffmpeg -i raw-audio.opus -t 1200 -b:a 32k -vn public/audio/sleep-loop.opus
+```
