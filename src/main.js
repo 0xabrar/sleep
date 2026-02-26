@@ -23,3 +23,18 @@ audio.addEventListener('pause', () => {
 volume.addEventListener('input', () => {
   audio.volume = volume.value;
 });
+
+if ('mediaSession' in navigator) {
+  navigator.mediaSession.metadata = new MediaMetadata({
+    title: 'Sleep Sounds',
+    artist: 'Sleep',
+  });
+
+  navigator.mediaSession.setActionHandler('play', () => {
+    audio.play();
+  });
+
+  navigator.mediaSession.setActionHandler('pause', () => {
+    audio.pause();
+  });
+}
